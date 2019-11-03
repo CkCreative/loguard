@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build_windows:
+    docker:
+      - image: electronuserland/builder:wine
+    steps:
+      - checkout
+      - run: cd isstum && yarn && yarn run build --win
+      - store_artifacts:
+          path: /build
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build_windows
