@@ -1,12 +1,12 @@
 <template>
   <v-layout row wrap justify-center id="wrapper">
     <v-flex xs10 class="mt-4 pt-5">
-      <v-card>
+      <v-card :key="whatever">
         <v-card-title class="headline">Access Token</v-card-title>
         <v-divider></v-divider>
-          <img color="black" :src="url">
+          <img color="black" :src="try_to_display_image">
         <v-card-actions class="pt-3 pb-3">
-          <v-btn class="link-btn" @click.native="createQr(text)"><img :src="icon" style="margin-right: 10px;" alt=""> refresh TOKEN</v-btn>
+          <v-btn class="link-btn" @click.native="createQr(text)"><img :src="icon" style="margin-right: 10px;" alt=""> refresh TOKEN </v-btn>
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
@@ -48,15 +48,22 @@
   import axios from 'axios'
   import { setTimeout } from 'timers';
   import upath from 'upath'
+  const remote = require('electron').remote;
+  const elec_app = remote.app;
+  const temp_path = elec_app.getPath('documents')
+  const fs = require('fs');
   // import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
   let canvas = document.getElementById('canvas')
-  var the_code_file = upath.join(__dirname, "loguard", "assets", "image.png");
+  
+  var the_code_file = upath.join(temp_path, "loguard", "assets", "image.png");
   // window.img = this.img
   export default {
     data () {
       return {
         icon:'./static/14.svg',
+        whatever: "",
         text: 'some text',
+        try_to_display_image: `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAANGSURBVO3BwY0kQQgEwAThIGZgEWbgIBL3rVdJrenZ20UZASIiIiIiIiIiIiIiIiKipQQfsqzBD+pwwcGyBocOF1xY1uDQ4YILyxr8oA4XfEBBqyhoFQWtYnhZhwteZFmDByxrcOhwwaHDBQfLGhw6XHDR4YIXWdbgRQpaRUGrKGgVw5dZ1uCBDhd8kWUNDh0u+IBlDR7ocMEXKWgVBa2ioFUMf1yHCy4sa3DocMFiClpFQasoaBXDH2dZg4sOF1xY1uDQ4YI/TEGrKGgVBa1i+LIOF3xRhwsuLGvwRR0u+EUUtIqCVlHQKoaXWdbgB1nW4NDhgosOFxwsa/CAZQ1+MQWtoqBVFLSKYBnLGnygwwV/mIJWUdAqClpF8CHLGhw6XHBhWYMv6nDBwbIGhw4XHCxrcNHhggvLGhw6XHCwrMEDHS74gIJWUdAqClrF8DLLGhw6XHDR4YKDZQ0OHS64sKzBizpccLCswaHDBb+YglZR0CoKWkXwMssaPNDhggvLGlx0uOBgWYOLDhc8YFmDQ4cLLixrcNHhgoNlDQ4dLviAglZR0CoKWsXwsg4XXFjW4IEOF1xY1uDQ4YILyxocOlxw0eGCC8sa/CIKWkVBqyhoFcF/ZlmDQ4cLDpY1OHS44MKyBhcdLnjAsgYXHS44WNbg0OGCg2UNLjpc8AEFraKgVRS0iuCPs6zBRYcLDpY1eFGHCx6wrMGhwwUvUtAqClpFQasYPmRZgx/U4YIHLGtw6HDBwbIGD3S44AHLGvwgBa2ioFUUtIrgQ5Y1OHS44EWWNTh0uOBgWYOLDhccLGtw0eGCg2UNHuhwwYVlDS46XPABBa2ioFUUtIrhyyxr8ECHCz7Q4YKDZQ0+0OGCg2UNDh0uuLCswaHDBQfLGrxIQasoaBUFrWJYrsMFB8savMiyBocOFxw6XHDR4YIXKWgVBa2ioFUMf1yHCw6WNTh0uODQ4YILyxo80OGCC8saPNDhgg8oaBUFraKgVQxf1uGCH9ThgoNlDQ4dLvhAhwsOljX4RRS0ioJWUdAqhpdZ1uAHWdbg0OGCC8saHDpccNHhggc6XHCwrMGhwwVfpKBVFLSKgoiIiIiIiIiIiIiIiIiI6A/4B04SPfNo69ggAAAAAElFTkSuQmCC`,
         qrdialog: false,
         errordialog: false,
         data: [],
@@ -70,10 +77,11 @@
     components: { SystemInformation },
     computed: {
       img() {
-        return window.store.state.img
+        return window.try_to_display_image
       },
       url: () => {
-        return `${the_code_file}`
+        let i = fs.readFileSync(the_code_file).toString('base64')
+        return `data:image/png;base64,${i}`
       }
     },
     methods: {
@@ -83,7 +91,7 @@
       reload () {
         window.location.reload()
       },
-      createQr (text) {
+      createQr(text) {
         const date = new Date()
         this.sending.status = true
         this.sending.progress = "sending the token to the server"
@@ -104,7 +112,8 @@
           this.sending.progress = "token successfully sent to the server..Now generating"
           // console.log(res.data)
           console.log()
-          jetpack.file(the_code_file);
+          // jetpack.file(the_code_file);
+          /*
           QRCode.toFile(the_code_file, fun, {
             color: {
               dark: '#0497AF',  // Blue dots
@@ -115,9 +124,20 @@
             console.log('done')
 
           })
-        this.sending.progress = "done!"
-          this.reload()
-          // console.log(__dirname)
+        this.sending.progress = "done!" */
+        QRCode.toDataURL(fun, {
+            color: {
+              dark: '#0497AF',  // Blue dots
+              light: '#0000' // Transparent background
+            }
+          }, function (err, url) {
+            this.try_to_display_image = `${url}`
+            // if (err) throw err
+            console.log(url)
+          }.bind(this))
+        
+          // this.reload()
+          // console.log(i)
         }).catch(err => {
           this.errordialog = true
         })
@@ -134,6 +154,7 @@
     }, 
     created () {
       console.log(__dirname)
+      this.whatever = ""
       console.log(the_code_file)
       try {
         axios.get('https://safaris-10946.firebaseio.com/isstum.json')
