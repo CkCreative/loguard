@@ -1,0 +1,26 @@
+{
+  "-LslGJbTZbDMq_MjmXkP": {
+    "logs": {
+      "code_created": "\"1572784644\"",
+      "code_used": "\"1572784668\"",
+      "date": "\"Sun 11/3/2019 @ 15:37 hrs\"",
+      "id_np": "\"29858493\"",
+      "name": "\"Mike Chumba \"",
+      "place": "\"REA\"",
+      "type": "\"Sign In\""
+    },
+    "validation": "\"1572784655\""
+  },
+  "-LslGaMMnQvdVm1Jvo9S": {
+    "logs": {
+      "code_created": "\"1572784726\"",
+      "code_used": "\"1572784741\"",
+      "date": "\"Sun 11/3/2019 @ 15:39 hrs\"",
+      "id_np": "\"29858493\"",
+      "name": "\"Mike Chumba \"",
+      "place": "\"REA\"",
+      "type": "\"Sign Out\""
+    },
+    "validation": "\"1572784727\""
+  }
+}

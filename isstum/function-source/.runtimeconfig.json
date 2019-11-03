@@ -1,0 +1,7 @@
+{
+  "firebase": {
+    "projectId": "safaris-10946",
+    "databaseURL": "https://safaris-10946.firebaseio.com",
+    "storageBucket": "safaris-10946.appspot.com"
+  }
+}

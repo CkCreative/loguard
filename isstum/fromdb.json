@@ -1,0 +1,34 @@
+[
+  {
+    "name": "David",
+    "type": "Sign In",
+    "on": "Mon 5/18/2018 @ 20:44 hrs",
+    "code_created": "1529343838",
+    "code_used": "1529343848",
+    "validation": "1529343853"
+  },
+  {
+    "name": "Mike Chumba",
+    "type": "Sign Out",
+    "on": "Mon 5/18/2018 @ 7:17 hrs",
+    "code_created": "1529295414",
+    "code_used": "1529295432",
+    "validation": "1529295436"
+  },
+  {
+    "name": "Mike Chumba",
+    "type": "Sign In",
+    "on": "Sun 5/17/2018 @ 22:20 hrs",
+    "code_created": "1529263227",
+    "code_used": "1529263239",
+    "validation": "1529263242"
+  },
+  {
+    "name": "Mike Chumba",
+    "type": "Sign Out",
+    "on": "Sun 5/17/2018 @ 22:15 hrs",
+    "code_created": "1529262913",
+    "code_used": "1529262922",
+    "validation": "1529262924"
+  }
+]
