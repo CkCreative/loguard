@@ -62,6 +62,8 @@ const {dialog} = require('electron').remote
 import jetpack from 'fs-jetpack'
 import axios from 'axios'
 import _ from 'lodash'
+const remote = require('electron').remote;
+const elec_app = remote.app;
 
 const Json2csvParser = require('json2csv').Parser;
 
@@ -110,7 +112,7 @@ export default {
         },
         object: () => {
             window.temporary_data_sec = []
-            _.forEach(jetpack.read('security_logs.json', 'json'), (key, value) => {
+            _.forEach(jetpack.read(elec_app.getPath('documents')+'/security_logs.json', 'json'), (key, value) => {
                 window.temporary_data_sec.unshift(key)
                 // window.temporary_data ['value'] = false
             })
@@ -137,7 +139,7 @@ export default {
                 // window.exam_data = JSON.parse(res.data)
                 console.log(res.data)
                 // console.log(window.exam_data)
-                jetpack.write('security_logs.json', res.data)
+                jetpack.write(elec_app.getPath('documents')+'/security_logs.json', res.data)
             })
             .catch(e => console.log(e))
         },

@@ -5,9 +5,7 @@ jobs:
       - image: electronuserland/builder:wine
     steps:
       - checkout
-      - run: cd isstum && yarn && yarn run build --win
-      - store_artifacts:
-          path: /build
+      - run: cd isstum && yarn && yarn run build
 
 workflows:
   version: 2
