@@ -10,16 +10,6 @@
           <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
-      <v-dialog v-model="qrdialog">
-        <v-card>
-          <v-card-text>
-            <img :src="url" alt="">
-          </v-card-text>
-          <v-card-actions>
-            <v-btn flat @click.native="qrdialog = !qrdialog">Close</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
       <v-dialog v-model="errordialog">
         <v-card>
           <v-card-text>
@@ -47,15 +37,15 @@
   import _ from 'lodash'
   import axios from 'axios'
   import { setTimeout } from 'timers';
-  import upath from 'upath'
-  const remote = require('electron').remote;
-  const elec_app = remote.app;
-  const temp_path = elec_app.getPath('documents')
-  const fs = require('fs');
+  // import upath from 'upath'
+  // const remote = require('electron').remote;
+  // const elec_app = remote.app;
+  // const temp_path = elec_app.getPath('documents')
+  // const fs = require('fs');
   // import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
   let canvas = document.getElementById('canvas')
   
-  var the_code_file = upath.join(temp_path, "loguard", "assets", "image.png");
+  // var the_code_file = upath.join(temp_path, "loguard", "assets", "image.png");
   // window.img = this.img
   export default {
     data () {
@@ -80,8 +70,8 @@
         return window.try_to_display_image
       },
       url: () => {
-        let i = fs.readFileSync(the_code_file).toString('base64')
-        return `data:image/png;base64,${i}`
+        //let i = fs.readFileSync(the_code_file).toString('base64')
+        return `data:image/png;base64,`
       }
     },
     methods: {
@@ -101,7 +91,7 @@
         let hour = date.getHours()
         let minutes = date.getMinutes()
         let fun = Math.floor(_.now() / 1000)
-        console.log(fun)
+        // console.log(fun)
         fun = '"' + fun +'"'
         // console.log(code) 
         axios.post('https://us-central1-safaris-10946.cloudfunctions.net/api/tokens',
@@ -133,7 +123,7 @@
             }, function (err, url) {
               this.try_to_display_image = `${url}`
               // if (err) throw err
-              console.log(url)
+              // console.log(url)
             }.bind(this))
         
           // this.reload()
@@ -163,7 +153,7 @@
           for (response.data.length; i=0; i++) {
             this.data.push(response.data[i].logs)
           }
-          console.log(this.data)
+          // console.log(this.data)
         })
       } catch (e) {
         console.log(e)
