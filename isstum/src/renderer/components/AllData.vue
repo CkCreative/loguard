@@ -29,6 +29,7 @@
             </template>
             <template slot="items" slot-scope="props" >
             <td>{{ props.item.name }}</td>
+            <td class="text-xs-right">{{ props.item.id_np }}</td>
             <td class="text-xs-right">{{ props.item.date }}</td>
             <td class="text-xs-right"><v-icon
                                 :color="props.item.validation-props.item.code_created > 15 ? 'red' : 'green'"
@@ -67,7 +68,7 @@ const elec_app = remote.app;
 
 const Json2csvParser = require('json2csv').Parser;
 
-const fields = ['code_created', 'code_used', 'date', 'name', 'type', 'place', 'validation'];
+const fields = ['code_created', 'code_used', 'id_no', 'date', 'name', 'type', 'place', 'validation'];
  
 const json2csvParser = new Json2csvParser({ fields });
 
@@ -95,6 +96,7 @@ export default {
                     align: 'left',
                     value: 'name'
                 },
+                { text: 'ID No', value: 'id_np' },
                 { text: 'Time of Activity', value: 'date' },
                 { text: 'Level', value: 'level' },
                 { text: 'Token Requested', value: 'code_created' },
@@ -122,6 +124,7 @@ export default {
                // key.details.invigilator = key.details.invigilator.replace('"','')
                 key.logs.validation = key.validation.replace('"','').replace('"','')
                 key.logs.name = key.logs.name.replace('"','').replace('"','')
+                key.logs.id_np = key.logs.id_np.replace('"','').replace('"','')
                 key.logs.date = key.logs.date.replace('"','').replace('"','')
                 key.logs.code_created = key.logs.code_created.replace('"','').replace('"','')
                 key.logs.code_used = key.logs.code_used.replace('"','').replace('"','')

@@ -1,7 +1,7 @@
 <template>
   <v-layout row wrap justify-center id="wrapper">
     <v-flex xs10 class="mt-4 pt-5">
-      <v-card :key="whatever">
+      <v-card >
         <v-card-title class="headline">Access Token</v-card-title>
         <v-divider></v-divider>
           <img color="black" :src="try_to_display_image">
@@ -24,7 +24,7 @@
         <v-card>
           <v-card-text>
             <v-chip color="red">error!</v-chip>
-            Check the internet connection and try again...
+            There was an error, please try again..
           </v-card-text>
           <v-card-actions>
             <v-btn flat @click.native="errordialog = !errordialog">Close</v-btn>
@@ -109,9 +109,9 @@
           token: fun
         })
         .then (res => {
-          this.sending.progress = "token successfully sent to the server..Now generating"
+          this.sending.progress = "Token successfully sent to the server."
           // console.log(res.data)
-          console.log()
+          // console.log()
           // jetpack.file(the_code_file);
           /*
           QRCode.toFile(the_code_file, fun, {
@@ -125,16 +125,16 @@
 
           })
         this.sending.progress = "done!" */
-        QRCode.toDataURL(fun, {
-            color: {
-              dark: '#0497AF',  // Blue dots
-              light: '#0000' // Transparent background
-            }
-          }, function (err, url) {
-            this.try_to_display_image = `${url}`
-            // if (err) throw err
-            console.log(url)
-          }.bind(this))
+          QRCode.toDataURL(fun, {
+              color: {
+                dark: '#0497AF',  // Blue dots
+                light: '#0000' // Transparent background
+              }
+            }, function (err, url) {
+              this.try_to_display_image = `${url}`
+              // if (err) throw err
+              console.log(url)
+            }.bind(this))
         
           // this.reload()
           // console.log(i)
@@ -153,11 +153,11 @@
       }
     }, 
     created () {
-      console.log(__dirname)
-      this.whatever = ""
-      console.log(the_code_file)
+      // console.log(__dirname)
+      // this.whatever = ""
+      // console.log(the_code_file)
       try {
-        axios.get('https://safaris-10946.firebaseio.com/isstum.json')
+        axios.get('https://safaris-10946.firebaseio.com/loguard.json')
         .then(response => {
           let i = 0
           for (response.data.length; i=0; i++) {
