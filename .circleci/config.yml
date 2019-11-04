@@ -3,12 +3,11 @@ jobs:
   build_windows:
     docker:
       - image: electronuserland/builder:wine
-    working_directory: ~/isstum
     steps:
       - checkout
-      - run: yarn && yarn run build
+      - run: cd isstum && yarn && yarn run build
       - store_artifacts:
-          path: /build
+          path: ./build
 
 workflows:
   version: 2
