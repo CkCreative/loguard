@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/isstum
     steps:
       - checkout
-      - run: cd yarn && yarn run build
+      - run: yarn && yarn run build
       - store_artifacts:
           path: /build
 
