@@ -30,7 +30,7 @@ all the possible choices and also explaining how the system works.
 
 ### The block diagram
 
-![](media\image13.png)
+![](media/image13.png)
 
 []{#_Toc518037113 .anchor}**Figure** **12** The block diagram of
 Integrated Security System for TUM
@@ -315,12 +315,12 @@ expected and also to find an opportunity to collect results.
 
 Postman was used to test the REST endpoints of the server.
 
-![](media\image14.png)
+![](media/image14.png)
 
 []{#_Toc518037114 .anchor}**Figure** **13** Sending valid JSON to the
 server using Postman
 
-![](media\image15.png)
+![](media/image15.png)
 
 []{#_Toc518037115 .anchor}**Figure** **14** Examining the response from
 the server
@@ -331,7 +331,7 @@ responds to the requesting client, which in this case is Postman, with a
 complete object that was posted to the database as shown in the figure
 above.
 
-![](media\image16.png)
+![](media/image16.png)
 
 []{#_Toc518037116 .anchor}**Figure** **15** A screenshot of the database
 showing the data sent
@@ -345,7 +345,7 @@ The ISSTUM desktop installer with a .exe extension was run on a windows
 application installed as expected. After completing the installation
 process, it created a desktop shortcut.
 
-![](media\image17.png)
+![](media/image17.png)
 
 []{#_Toc518037117 .anchor}**Figure** **16** The desktop shortcut for
 launching the ISSTUM application
@@ -357,7 +357,7 @@ took a few seconds to start. First the application displayed a white
 screen. Then, after finishing loading, it then displayed the token
 generation section of the application.
 
-![](media\image18.png)
+![](media/image18.png)
 
 []{#_Toc518037118 .anchor}**Figure** **17** The Screen shown by the
 application when first launched
@@ -368,21 +368,21 @@ When the 'refresh token' button was clicked, the application generated a
 new token, sent the token to the server, and then reloaded the page
 showing a new token that it had generated.
 
-![](media\image19.png)
+![](media/image19.png)
 
 []{#_Toc518037119 .anchor}**Figure** **18** Generating and sending the
 token to the server
 
-![](media\image20.png)
+![](media/image20.png)
 
 []{#_Toc518037120 .anchor}**Figure** **19** Token saved to the server
 
-![](media\image21.png)
+![](media/image21.png)
 
 []{#_Toc518037121 .anchor}**Figure** **20** Token shown to the user
 after sending to the server
 
-![](media\image22.png)
+![](media/image22.png)
 
 []{#_Toc518037122 .anchor}**Figure** **21** A QR Code reader showing
 that actually the code is 1530248890 as indicated in the server
@@ -397,31 +397,31 @@ code for the student, the page was reloaded showing the new student QR
 Code that matches the details of the student that were entered. It was
 then possible to save the code as a PNG file for printing.
 
-![](media\image23.png)
+![](media/image23.png)
 
 []{#_Toc518037123 .anchor}**Figure** **22** Generating QR Codes for
 students given their registration numbers
 
 #### Displaying the logged data
 
-![](media\image24.png)
+![](media/image24.png)
 
 []{#_Toc518037124 .anchor}**Figure** **23** Displaying logs of sign in
 and sign out sorted by time of activity
 
-![](media\image25.png)
+![](media/image25.png)
 
 []{#_Toc518037125 .anchor}**Figure** **24** Exported security logs data
 in excel format
 
 #### Displaying the logged exam details
 
-![](media\image26.png)
+![](media/image26.png)
 
 []{#_Toc518037126 .anchor}**Figure** **25** The exam details obtained
 from the server logs sorted by date and time
 
-![](media\image27.png)
+![](media/image27.png)
 
 []{#_Toc518037127 .anchor}**Figure** **26** Exported data in excel
 format
@@ -442,59 +442,59 @@ with a loading animation. The application then opened showing the staff
 login section by default with an online or offline status indicator on
 the menu bar.
 
-![](media\image28.png)
-![](media\image29.png)
+![](media/image28.png)
+![](media/image29.png)
 
 []{#_Toc518037128 .anchor}**Figure** **27** Launching ISSTUM mobile
 application for the first time
 
 #### Checking the student details for a student who has paid school fees in full or in excess
 
-![](media\image30.png)
-![](media\image31.png)
-![](media\image32.png)
+![](media/image30.png)
+![](media/image31.png)
+![](media/image32.png)
 
 []{#_Toc518037129 .anchor}**Figure** **28** Checking data for a student
 who has paid school fees in full or in excess
 
 #### Checking the student details for a student who has any school fees balance
 
-![](media\image33.png)
+![](media/image33.png)
 
 []{#_Toc518037130 .anchor}**Figure** **29** A student who has not paid
 school fees in full
 
 #### Checking the student details for a student who is not in the system
 
-![](media\image34.png)
+![](media/image34.png)
 
 []{#_Toc518037131 .anchor}**Figure** **30** Unknow student
 
 #### Server response when the data about a student checks out ok
 
-![](media\image35.png)
+![](media/image35.png)
 
 []{#_Toc518037132 .anchor}**Figure** **31** Server response for a
 student whose details check out ok in an exam room
 
 #### Staff sign in and sign out using a valid access token
 
-![](media\image36.png) ![](media\image37.png) ![](media\image38.png)
+![](media/image36.png) ![](media/image37.png) ![](media/image38.png)
 
 []{#_Toc518037133 .anchor}**Figure** **32** Staff sign in and sign out
 using a valid access token
 
 #### Staff sign in and sign out using an expired or invalid access token
 
-![](media\image39.png)
+![](media/image39.png)
 
 []{#_Toc518037134 .anchor}**Figure** **33** Staff sign in and sign out
 using an invalid or expired security token
 
 #### Online and offline status
 
-![](media\image40.png)
-![](media\image36.png)
+![](media/image40.png)
+![](media/image36.png)
 
 []{#_Toc518037135 .anchor}**Figure** **34** Online and offline status of
 the application
