@@ -441,18 +441,17 @@ When the mobile application was first run, it showed a welcome screen
 with a loading animation. The application then opened showing the staff
 login section by default with an online or offline status indicator on
 the menu bar.
-
-![](media/image28.png)
-![](media/image29.png)
+| | |
+| ---- | ---- |
+| ![](media/image28.png) | ![](media/image29.png) |
 
 []{#_Toc518037128 .anchor}**Figure** **27** Launching ISSTUM mobile
 application for the first time
 
 #### Checking the student details for a student who has paid school fees in full or in excess
-
-![](media/image30.png)
-![](media/image31.png)
-![](media/image32.png)
+| | | |
+| ---- | ---- | ---- |
+| ![](media/image30.png) | ![](media/image31.png) | ![](media/image32.png) |
 
 []{#_Toc518037129 .anchor}**Figure** **28** Checking data for a student
 who has paid school fees in full or in excess
@@ -479,22 +478,27 @@ student whose details check out ok in an exam room
 
 #### Staff sign in and sign out using a valid access token
 
-![](media/image36.png) ![](media/image37.png) ![](media/image38.png)
+| | | |
+| ---- | ---- | ---- |
+| ![](media/image36.png) | ![](media/image37.png) | ![](media/image38.png) |
 
 []{#_Toc518037133 .anchor}**Figure** **32** Staff sign in and sign out
 using a valid access token
 
 #### Staff sign in and sign out using an expired or invalid access token
 
-![](media/image39.png)
+| | |
+| --- | --- |
+| ![](media/image39.png) |  |
 
 []{#_Toc518037134 .anchor}**Figure** **33** Staff sign in and sign out
 using an invalid or expired security token
 
 #### Online and offline status
 
-![](media/image40.png)
-![](media/image36.png)
+| | |
+| --- | --- |
+|![](media/image40.png) | ![](media/image36.png) |
 
 []{#_Toc518037135 .anchor}**Figure** **34** Online and offline status of
 the application
